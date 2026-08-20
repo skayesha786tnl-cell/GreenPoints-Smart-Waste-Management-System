@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | GreenPoints</title>
+
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body class="dashboard-page">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="dashboard-logo">
+            🌱 GreenPoints
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html" class="active">
+                📊 Dashboard
+            </a>
+
+            <a href="#">
+                ♻️ Submit Waste
+            </a>
+
+            <a href="#">
+                📱 My QR Code
+            </a>
+
+            <a href="#">
+                🎁 Rewards
+            </a>
+
+            <a href="#">
+                🏆 Leaderboard
+            </a>
+
+            <a href="#">
+                📋 Waste History
+            </a>
+
+        </nav>
+
+        <button class="logout-btn" onclick="logout()">
+            🚪 Logout
+        </button>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="dashboard-main">
+
+        <!-- TOP BAR -->
+
+        <header class="dashboard-header">
+
+            <div>
+                <p class="dashboard-label">HOUSEHOLD DASHBOARD</p>
+
+                <h1>
+                    Welcome back, <span id="dashboardName">Green Home</span>! 👋
+                </h1>
+
+                <p>
+                    Keep making your community cleaner and greener.
+                </p>
+            </div>
+
+            <div class="profile-circle">
+                👤
+            </div>
+
+        </header>
+
+
+        <!-- STAT CARDS -->
+
+        <section class="stats-grid">
+
+            <div class="stat-card points-card">
+
+                <div class="stat-icon">⭐</div>
+
+                <div>
+                    <p>Green Points</p>
+                    <h2 id="pointsValue">0</h2>
+                    <small>Available points</small>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">♻️</div>
+
+                <div>
+                    <p>Waste Segregated</p>
+                    <h2>0 kg</h2>
+                    <small>This month</small>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">🌱</div>
+
+                <div>
+                    <p>Eco Score</p>
+                    <h2>0%</h2>
+                    <small>Keep improving</small>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">🏆</div>
+
+                <div>
+                    <p>Community Rank</p>
+                    <h2>#--</h2>
+                    <small>Keep participating</small>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- QUICK ACTIONS -->
+
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Quick Actions</h2>
+                    <p>Manage your GreenPoints activities</p>
+                </div>
+
+            </div>
+
+
+            <div class="action-grid">
+
+                <div class="action-card">
+
+                    <div class="action-icon">♻️</div>
+
+                    <h3>Submit Waste</h3>
+
+                    <p>
+                        Record your wet or dry waste collection.
+                    </p>
+
+                    <button>
+                        Submit →
+                    </button>
+
+                </div>
+
+
+                <div class="action-card">
+
+                    <div class="action-icon">📱</div>
+
+                    <h3>My QR Code</h3>
+
+                    <p>
+                        Show your household QR code to the collector.
+                    </p>
+
+                    <button>
+                        View QR →
+                    </button>
+
+                </div>
+
+
+                <div class="action-card">
+
+                    <div class="action-icon">🎁</div>
+
+                    <h3>Rewards</h3>
+
+                    <p>
+                        Redeem your GreenPoints for rewards.
+                    </p>
+
+                    <button>
+                        Explore →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- LOWER SECTION -->
+
+        <section class="dashboard-bottom">
+
+            <!-- WASTE PROGRESS -->
+
+            <div class="dashboard-box">
+
+                <div class="box-header">
+
+                    <div>
+                        <h2>♻️ Waste Progress</h2>
+                        <p>Your monthly segregation goal</p>
+                    </div>
+
+                    <span>0 / 20 kg</span>
+
+                </div>
+
+                <div class="progress-bar">
+
+                    <div class="progress-fill"></div>
+
+                </div>
+
+                <p class="progress-message">
+                    Start submitting waste to build your progress! 🌱
+                </p>
+
+            </div>
+
+
+            <!-- HOUSEHOLD INFO -->
+
+            <div class="dashboard-box">
+
+                <h2>🏠 Household Information</h2>
+
+                <div class="household-info">
+
+                    <div>
+                        <span>Household ID</span>
+                        <strong id="householdId">---</strong>
+                    </div>
+
+                    <div>
+                        <span>Email</span>
+                        <strong id="userEmail">---</strong>
+                    </div>
+
+                    <div>
+                        <span>Address</span>
+                        <strong id="userAddress">---</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RECENT ACTIVITY -->
+
+        <section class="dashboard-box activity-box">
+
+            <div class="box-header">
+
+                <div>
+                    <h2>📋 Recent Activity</h2>
+                    <p>Your latest waste-management activities</p>
+                </div>
+
+                <a href="#">View All</a>
+
+            </div>
+
+            <div class="empty-activity">
+
+                <div>🌱</div>
+
+                <h3>No activity yet</h3>
+
+                <p>
+                    Submit your first waste collection to see
+                    your activity here.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
