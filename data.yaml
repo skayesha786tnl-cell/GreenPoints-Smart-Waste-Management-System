@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 2
+names: ['manhole', 'pothole']
+
+roboflow:
+  workspace: agx-iyj2m
+  project: pothole-detection-l9vtt
+  version: 16
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/agx-iyj2m/pothole-detection-l9vtt/dataset/16
